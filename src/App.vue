@@ -29,6 +29,7 @@ const sortedRoutes = computed(() => {
   });
   return sorted;
 });
+
 </script>
 
 
@@ -59,6 +60,8 @@ const sortedRoutes = computed(() => {
       </tr>
       </tbody>
     </table>
+
+    <button v-if="sortKey"  @click="sortKey = ''" type="button">Сбросить сортировку</button>
   </div>
 </template>
 
@@ -67,6 +70,18 @@ const sortedRoutes = computed(() => {
   padding: 10px;
   width: 70%;
   overflow-x: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.table-wrapper button{
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  cursor: pointer;
 }
 
 .route-table {
